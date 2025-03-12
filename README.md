@@ -1,0 +1,4 @@
+This is an example implementation of linearized gradient descent.  
+The algorithm provides guaranteed parameter convergence when the loss function is C^2 (the main restriction), bounded below and coercive (needed to ensure a minima exists).  There are some weaker theoretical guarantees needed to get the proofs to go through, but these aren't likely to matter in practice.  
+For deep learning, this algorithm is useful because it combines well with momentum techniques and it remains a first order algorithm.  Limiting the algorithm to first order methods helps the training process reduce memory requirements and it also helps the algorithm to bounce over regions of sharp but poor local minima.
+The code here is designed to distill the core of the algorithm.  When applying the algorithm to DNNs be sure to use momentum on the gradients to help stabilize the learning rate adaptation.
